@@ -1,0 +1,21 @@
+.boxTitle {
+  display: flex;
+  margin-bottom: 24px;
+}
+
+.activeDot {
+  color: red;
+  font-size: 45px;
+  height: 8px;
+  margin-right: 7px;
+}
+
+.boxTitle {
+  font-family: 'Epilogue', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+
+  letter-spacing: 0.01em; 
+}
