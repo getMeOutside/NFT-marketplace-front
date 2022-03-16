@@ -43,10 +43,12 @@
   border-radius: 51px;
   font-weight: 500;
   color: rgba(85, 85, 85, 1);
+  margin: 12px 0 40px 0;
 }
 
 .active {
   border: 1px solid black;
+  padding-top: 5px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -54,7 +56,6 @@
   .activeDot {
     font-size: 30px;
     color: #009846;
-    height: 6px;
   }
 
   .boxLeft {
@@ -62,12 +63,13 @@
     margin-left: 34px;
   }
 
-  .boxRight,
-  .textLeft {
-    text-align: left;
+  .boxRight {
+    margin-right: 45px;
   }
 
-  .boxRight {
-    margin-right: 34px;
+  .bid {
+    font-weight: 700;
+    font-size: 20px;
+    color: black;
   }
 }

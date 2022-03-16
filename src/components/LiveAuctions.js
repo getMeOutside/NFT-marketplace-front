@@ -1,6 +1,5 @@
 import Card from './Card';
-import { 
-  Flex, 
+import {
   Box, 
   Text
 } from '@chakra-ui/react';
@@ -18,7 +17,9 @@ const LiveAuctions = () => {
       </Box>
 
       <Card />
+      <BidBtn />
 
+      <Card />
       <BidBtn />
     </Box>
   );

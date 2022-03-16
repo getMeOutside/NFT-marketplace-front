@@ -6,10 +6,13 @@ import {
   Box, 
   Text
 } from '@chakra-ui/react';
+import { connect } from 'react-redux';
 import {ReactComponent as LikeIcon} from '../components/icons/Like.svg';
+import { updateCounter } from '../reducers/TestReducer';
 import styles from '../styles/card.module.scss';
 
-const Card = () => {
+const Card = (props) => {
+  const { testF } = props
   return (
     <Box className={styles.card}>
       <Box className={styles.imageBox}>
@@ -37,11 +40,20 @@ const Card = () => {
           </Box>
         </Box>
         <Box mr='8px'>
-          <LikeIcon />
+          <LikeIcon onClick={() => testF()}/>
+          {/* add fill='red' if user likes it */}
         </Box>
       </Flex>
     </Box>
   );
 }
 
-export default Card;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    testF: () => {
+      dispatch(updateCounter())
+    }
+  }
+}
+
+export default connect(null, mapDispatchToProps)(Card);

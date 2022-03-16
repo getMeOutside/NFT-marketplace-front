@@ -9,6 +9,22 @@
   .icons {
     display: flex;
     width: 75px;
+    align-items: center;
     justify-content: space-between;
   }
+}
+
+.modalContainer {
+  width: 100%;
+  max-width: 660px;
+  margin: 0 auto;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modalLinks {
+  flex-direction: column;
+  align-items: center;
+  font-weight: 700;
+  font-size: 32px;
 }

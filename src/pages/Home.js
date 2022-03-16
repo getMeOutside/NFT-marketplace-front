@@ -1,23 +1,38 @@
+import { useState, useEffect } from 'react';
 import BidItem from '../components/BidItem';
 import LiveAuctions from '../components/LiveAuctions';
 import { 
   Box,
-  Text, 
+  Spinner, 
   Input, 
   InputGroup, 
   InputLeftElement,
   InputRightElement } from '@chakra-ui/react';
+import { getProducts } from '../api/index';
+
 import {ReactComponent as SearchIcon} from '../components/icons/Search.svg';
 import {ReactComponent as VoiceIcon} from '../components/icons/Voice.svg';
 import styles from '../styles/home.module.scss';
 
-function App() {
+const App = () => {
+  const [homeItems, setHomeItems] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  
+  useEffect(() => {
+    getProducts(10).then((res) => {
+      console.log(res)
+      setHomeItems(res);
+      setIsLoading(false);
+      console.log(homeItems);
+    });
+  }, []);
+
   return (
     <Box>
-      <Text className={styles.title}>
+      <Box className={styles.title}>
         <p className={styles.firstLine}>Discover, collect, and sell</p>
         <p className={styles.secondLine}>Your Digital Art</p>
-      </Text>
+      </Box>
 
       <Box className={styles.content}>
         <InputGroup bg='#F0F0F0' borderRadius='8px' my='22px'>
@@ -28,8 +43,14 @@ function App() {
           <InputRightElement children={<VoiceIcon color='green.500' />} />
         </InputGroup>
 
-        <BidItem />
-        <LiveAuctions />
+        {isLoading ? 
+          <Spinner size='xl' /> : 
+          <>
+            <BidItem />
+            <LiveAuctions />
+          </>
+        }
+
       </Box>
     </Box>
   );

@@ -7,20 +7,22 @@ import styles from '../../styles/buttons.module.scss';
 
 const BidBtn = () => {
   return (
-    // <button className={styles.sold}>Sold for <b>2.00 ETH</b></button>
-    <button className={styles.active}>
+    // <Box className={styles.sold}>Sold for <b>2.00 ETH</b></Box>
+    <Box className={styles.active}>
       <Box className={styles.boxLeft}> 
-        <span className={styles.activeDot}>•</span>
-        <Box className={styles.textLeft}>
-          <Text>Current bid</Text>
-          <Text>2.00 ETH</Text>
+        <Box>
+          <Flex align="center" lineHeight='1rem'>
+            <span className={styles.activeDot}>•</span>
+            <Text>Current bid</Text>
+          </Flex>
+          <Text pl='8px' className={styles.bid}>2.00 ETH</Text>
         </Box>
       </Box>
       <Box className={styles.boxRight}>
-        <Text>Current bid</Text>
-        <Text>2.00 ETH</Text>
+        <Text lineHeight='1rem'>Ending in</Text>
+        <Text className={styles.bid}>27m 30s</Text>
       </Box>
-    </button>
+    </Box>
   );
 }
 

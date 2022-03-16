@@ -4,7 +4,7 @@ import {
   Box, 
   Text
 } from '@chakra-ui/react';
-import PlaceBidBtn from './butons/PlaceBid';
+import PlaceBidBtn from './butons/Gradient';
 import ViewWorkBtn from './butons/ViewWork';
 import styles from '../styles/bidItem.module.scss';
 

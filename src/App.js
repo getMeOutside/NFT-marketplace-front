@@ -1,16 +1,15 @@
-import { useState } from 'react';
-import Header from './components/Header';
+import Header from './components/header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
-import {
-  Route,
-  Routes,
-  Link
-} from "react-router-dom";
+// import {
+//   Route,
+//   Routes,
+//   Link
+// } from "react-router-dom";
+// import routes from './helpers/routes';
 import './App.css';
 
-function App() {
-  const [isHomePage, setIsHomePage] = useState(true);
+const App = () => {
   return (
     <div className="App">
       <Header />
@@ -20,7 +19,7 @@ function App() {
             <Home />
           </Route>
       </Routes> */}
-      {isHomePage && <Footer />}
+      <Footer />
     </div>
   );
 }
