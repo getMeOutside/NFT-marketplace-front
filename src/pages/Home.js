@@ -13,6 +13,7 @@ import { getProducts } from '../api/index';
 import {ReactComponent as SearchIcon} from '../components/icons/Search.svg';
 import {ReactComponent as VoiceIcon} from '../components/icons/Voice.svg';
 import styles from '../styles/home.module.scss';
+import { Outlet } from 'react-router-dom';
 
 const App = () => {
   const [homeItems, setHomeItems] = useState([]);
@@ -23,7 +24,6 @@ const App = () => {
       console.log(res)
       setHomeItems(res);
       setIsLoading(false);
-      console.log(homeItems);
     });
   }, []);
 
@@ -52,6 +52,7 @@ const App = () => {
         }
 
       </Box>
+      <Outlet />
     </Box>
   );
 }
