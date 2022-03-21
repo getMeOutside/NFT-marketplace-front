@@ -11,8 +11,7 @@ import {
 import './App.css';
 import Login from './components/Auth/Login';
 import Product from './components/Product/Product';
-import Card from './components/Product/Card/Card';
-
+import CardView from './components/Product/Card/CardView';
 
 const App = () => {
   return (
@@ -22,7 +21,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path='product'>
-              <Route path=':cardId' element={<Card />} />
+              <Route path=':cardId' element={<CardView />} />
             </Route>
           <Route path="login" element={<Login />} />
           <Route path='*' element={<div>404</div>}/>

@@ -8,7 +8,6 @@ import {
 } from '@chakra-ui/react';
 import { connect } from 'react-redux';
 import {ReactComponent as LikeIcon} from '../components/icons/Like.svg';
-import { updateCounter } from '../reducers/TestReducer';
 import styles from '../styles/card.module.scss';
 
 const Card = (props) => {
@@ -48,12 +47,5 @@ const Card = (props) => {
   );
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    testF: () => {
-      dispatch(updateCounter())
-    }
-  }
-}
 
-export default connect(null, mapDispatchToProps)(Card);
+export default Card;

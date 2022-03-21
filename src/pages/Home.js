@@ -14,18 +14,22 @@ import {ReactComponent as SearchIcon} from '../components/icons/Search.svg';
 import {ReactComponent as VoiceIcon} from '../components/icons/Voice.svg';
 import styles from '../styles/home.module.scss';
 import { Outlet } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCardsAction } from '../components/actions/actions';
 
 const App = () => {
-  const [homeItems, setHomeItems] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  
+  const dispatch = useDispatch()
+  const cards = useSelector(state => state.cardsReducer.cards);
+
   useEffect(() => {
     getProducts(10).then((res) => {
-      console.log(res)
-      setHomeItems(res);
+      dispatch(setCardsAction(res))
       setIsLoading(false);
     });
   }, []);
+
+  console.log(cards);
 
   return (
     <Box>

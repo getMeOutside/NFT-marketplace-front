@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 const GradientBtn = ({text, action}) => {
   const navigate = useNavigate();
   return (
-    <button onClick={() => navigate('product/id')} className={styles.placeBid}>{text}</button>
+    <button className={styles.placeBid}>{text}</button>
   );
 }
 
