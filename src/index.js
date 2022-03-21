@@ -5,7 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { ChakraProvider } from '@chakra-ui/react';
 import './index.css';
-import store from './store';
+import { store } from './store/store';
 import { BrowserRouter } from 'react-router-dom';
 
 ReactDOM.render(

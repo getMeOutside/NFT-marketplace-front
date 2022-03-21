@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import styles from '../../styles/buttons.module.scss';
 
 const ViewWorkBtn = () => {
+  const navigate = useNavigate();
   return (
-    <button className={styles.viewArtwork}>View Artwork</button>
+    <button onClick={() => navigate('product/id')} className={styles.viewArtwork}>View Artwork</button>
   );
 }
 

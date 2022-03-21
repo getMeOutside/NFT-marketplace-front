@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 const Header = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate = useNavigate();
+  
   return (
     <header>
       <Box className={styles.headerElements}>
